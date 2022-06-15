@@ -8,12 +8,16 @@ public class JumpStep {
 
     }
 
-    public static int count(int n){
+    public static int count(int n) {
+        if (n <= 0) {
 
-        if(n==1 || n ==2){
+            throw new IllegalArgumentException("错误的参数n");
+        }
+        if (n == 1 || n == 2) {
             return n;
-        }{
-           return count(n - 1) + count(n - 2);
+        }
+        {
+            return count(n - 1) + count(n - 2);
         }
 
 

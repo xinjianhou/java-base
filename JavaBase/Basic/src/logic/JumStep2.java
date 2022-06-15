@@ -8,6 +8,10 @@ public class JumStep2 {
     }
 
     public static int count(int n) {
+        if (n <= 0) {
+
+            throw new IllegalArgumentException("错误的参数n");
+        }
 
         if (n == 1 || n == 2) {
             return n;
@@ -17,10 +21,10 @@ public class JumStep2 {
             int sum = 0;
 
             for (int i = 3; i <= n; i++) {
-               sum = beforePre + pre;
+                sum = beforePre + pre;
                 //重置上一步和前一步
-               beforePre=pre;
-               pre=sum;
+                beforePre = pre;
+                pre = sum;
             }
             return sum;
         }
