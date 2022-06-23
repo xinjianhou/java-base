@@ -4,7 +4,6 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static sun.misc.GThreadHelper.lock;
 
 class ShareResources {
     private int number = 1;
