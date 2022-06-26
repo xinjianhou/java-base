@@ -12,7 +12,7 @@ public class StringExr {
     public static void main(String[] args) {
         StringExr ex = new StringExr();
         ex.change(ex.str, ex.ch);
-        System.out.println(ex.str);
-        System.out.println(ex.ch);
+        System.out.println(ex.str);//test ok
+        System.out.println(ex.ch);//best
     }
 }
