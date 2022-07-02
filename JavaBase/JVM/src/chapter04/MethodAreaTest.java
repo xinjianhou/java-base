@@ -5,6 +5,7 @@ public class  MethodAreaTest {
         Order o = null;
         System.out.println(o.count);
         System.out.println(o.num);
+        System.out.println(o.l);
         o.sayHello();
 
     }
@@ -12,6 +13,12 @@ public class  MethodAreaTest {
 
 class Order {
     public static int count = 1;
+
+    public static long l;
+
+    {
+        l = 199999l;
+    }
     public static final int num = 9;
 
     public static void sayHello() {

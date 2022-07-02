@@ -1,8 +1,11 @@
 package chapter02;
 
+import com.sun.istack.internal.Nullable;
+
 public class ClassInitTest {
 
     private static int i = 1;
+    @Nullable
     private static String s;
 
     static {

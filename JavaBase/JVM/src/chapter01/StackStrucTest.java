@@ -1,6 +1,10 @@
 package chapter01;
 
+import com.sun.istack.internal.Nullable;
+import jdk.nashorn.internal.objects.annotations.Getter;
+
 import java.util.concurrent.TimeUnit;
+
 
 public class StackStrucTest {
 
@@ -25,5 +29,11 @@ public class StackStrucTest {
             e.printStackTrace();
         }
         System.out.println("hello");
+    }
+
+    private void test() {
+
+        int i = 2 + 3;
+
     }
 }

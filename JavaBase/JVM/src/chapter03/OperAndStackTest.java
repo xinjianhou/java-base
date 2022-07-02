@@ -1,6 +1,6 @@
 package chapter03;
 
-public class OperandStackTest {
+public class OperAndStackTest {
 
     public void test() {
         byte i = 127;

@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
  * (+/-)UseParallelGC
  * (+/-)UseParallelOldGC
  * ParallelGCThreads=
+ * (+/-)PrintFlagsInitial
  */
 public class GCKindDemo {
     public static void main(String[] args) {

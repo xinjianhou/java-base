@@ -1,0 +1,9 @@
+package chapter04;
+
+public class IhaveNatives {
+    
+    public native void Native1(int x);
+    native static public long Native2();
+    native synchronized private float Native3(Object o);
+    native void Natives(int[] ary) throws Exception;
+}
