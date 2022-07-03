@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
  */
 public class MaxDirectMemorySizeDemo {
 
-    private static final int _1MB = 1024 * 1024;
+    private static final long _1MB = 1024 * 1024;
 
     public static void main(String[] args) throws IllegalAccessException {
         Field field = Unsafe.class.getDeclaredFields()[0];
