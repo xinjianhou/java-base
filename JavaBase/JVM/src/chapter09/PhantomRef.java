@@ -12,17 +12,14 @@ public class PhantomRef {
     public static class CheckRefQueue extends Thread {
         @Override
         public void run() {
-            while(true){
-                if(queue != null){
+            while (true) {
+                if (queue != null) {
                     PhantomReference<PhantomRef> objp = null;
-
-                    try {
-                        objp = (PhantomReference<PhantomRef>) queue.remove();
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                    if(objp!=null){
+                    objp = (PhantomReference<PhantomRef>) queue.poll();
+                    if (objp != null) {
                         System.out.println("追踪垃圾回收过程： PhantomRef实例被回收了！！！");
+                        System.out.println(objp);
+                        System.out.println(queue.poll());
                     }
                 }
             }
@@ -44,19 +41,18 @@ public class PhantomRef {
 
         queue = new ReferenceQueue<>();
         obj = new PhantomRef();
-
-        PhantomReference<PhantomRef> phantomReference = new PhantomReference<>(obj,queue);
+        PhantomReference<PhantomRef> phantomReference = new PhantomReference<>(obj, queue);
 
         try {
-            System.out.println(phantomReference.get()) ;
+            System.out.println(phantomReference.get());
 
             obj = null;
             System.gc();
 
             TimeUnit.SECONDS.sleep(1l);
-            if(obj == null){
+            if (obj == null) {
                 System.out.println("cleaned!!");
-            }else{
+            } else {
                 System.out.println("still alive!!");
             }
 
@@ -64,9 +60,9 @@ public class PhantomRef {
             System.gc();
 
             TimeUnit.SECONDS.sleep(1l);
-            if(obj == null){
+            if (obj == null) {
                 System.out.println("cleaned!!");
-            }else{
+            } else {
                 System.out.println("still alive!!");
             }
 

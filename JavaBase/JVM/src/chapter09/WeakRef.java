@@ -17,13 +17,12 @@ public class WeakRef {
                 if(queue != null){
                     WeakReference<WeakRef> objw = null;
 
-                    try {
-                        objw = (WeakReference<WeakRef>) queue.remove();
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+                    objw = (WeakReference<WeakRef>) queue.poll();
+                   
                     if(objw!=null){
+                        System.out.println(objw);
                         System.out.println("追踪垃圾回收过程： WeakRef实例被回收了！！！");
+                        System.out.println(queue.poll());
                     }
                 }
             }
@@ -41,6 +40,7 @@ public class WeakRef {
         WeakReference<WeakRef> weakReference = new WeakReference<>(obj,queue);
 
         try {
+            System.out.println(weakReference);
             System.out.println(weakReference.get()) ;
 
             obj = null;
